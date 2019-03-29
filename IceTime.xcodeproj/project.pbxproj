@@ -12,9 +12,13 @@
 		946D0360224DD85D002FC037 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 946D035E224DD85D002FC037 /* Main.storyboard */; };
 		946D0362224DD85E002FC037 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 946D0361224DD85E002FC037 /* Assets.xcassets */; };
 		946D0365224DD85E002FC037 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 946D0363224DD85E002FC037 /* LaunchScreen.storyboard */; };
+		946D036E224DD943002FC037 /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D036D224DD943002FC037 /* URLManager.swift */; };
+		E35BC12CE7BE0CF1C96BECB2 /* Pods_IceTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 442D5DBAC1175F2E7CE759B7 /* Pods_IceTime.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		442D5DBAC1175F2E7CE759B7 /* Pods_IceTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IceTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71FE83FEB0D7FC3434DADE52 /* Pods-IceTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IceTime.debug.xcconfig"; path = "Target Support Files/Pods-IceTime/Pods-IceTime.debug.xcconfig"; sourceTree = "<group>"; };
 		946D0357224DD85D002FC037 /* IceTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IceTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		946D035A224DD85D002FC037 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		946D035C224DD85D002FC037 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,8 @@
 		946D0361224DD85E002FC037 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		946D0364224DD85E002FC037 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		946D0366224DD85E002FC037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		946D036D224DD943002FC037 /* URLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLManager.swift; sourceTree = "<group>"; };
+		D3E707FCFAC64FAD806A0798 /* Pods-IceTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IceTime.release.xcconfig"; path = "Target Support Files/Pods-IceTime/Pods-IceTime.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E35BC12CE7BE0CF1C96BECB2 /* Pods_IceTime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +47,8 @@
 			children = (
 				946D0359224DD85D002FC037 /* IceTime */,
 				946D0358224DD85D002FC037 /* Products */,
+				E0E3D8DB6CDAA2CA2A81B2A6 /* Pods */,
+				EEFC9BFDF41EF9F6F7640443 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +63,40 @@
 		946D0359224DD85D002FC037 /* IceTime */ = {
 			isa = PBXGroup;
 			children = (
+				946D036C224DD928002FC037 /* ViewController */,
 				946D035A224DD85D002FC037 /* AppDelegate.swift */,
 				946D035C224DD85D002FC037 /* ViewController.swift */,
 				946D035E224DD85D002FC037 /* Main.storyboard */,
 				946D0361224DD85E002FC037 /* Assets.xcassets */,
 				946D0363224DD85E002FC037 /* LaunchScreen.storyboard */,
 				946D0366224DD85E002FC037 /* Info.plist */,
+				946D036D224DD943002FC037 /* URLManager.swift */,
 			);
 			path = IceTime;
+			sourceTree = "<group>";
+		};
+		946D036C224DD928002FC037 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E0E3D8DB6CDAA2CA2A81B2A6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				71FE83FEB0D7FC3434DADE52 /* Pods-IceTime.debug.xcconfig */,
+				D3E707FCFAC64FAD806A0798 /* Pods-IceTime.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EEFC9BFDF41EF9F6F7640443 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				442D5DBAC1175F2E7CE759B7 /* Pods_IceTime.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +106,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 946D0369224DD85E002FC037 /* Build configuration list for PBXNativeTarget "IceTime" */;
 			buildPhases = (
+				FCF10ED973682DA701D6C049 /* [CP] Check Pods Manifest.lock */,
 				946D0353224DD85D002FC037 /* Sources */,
 				946D0354224DD85D002FC037 /* Frameworks */,
 				946D0355224DD85D002FC037 /* Resources */,
+				9EBFEE41429C48F2DAA429EF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,6 +167,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9EBFEE41429C48F2DAA429EF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IceTime/Pods-IceTime-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IceTime/Pods-IceTime-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCF10ED973682DA701D6C049 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IceTime-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		946D0353224DD85D002FC037 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -137,6 +223,7 @@
 			files = (
 				946D035D224DD85D002FC037 /* ViewController.swift in Sources */,
 				946D035B224DD85D002FC037 /* AppDelegate.swift in Sources */,
+				946D036E224DD943002FC037 /* URLManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +367,7 @@
 		};
 		946D036A224DD85E002FC037 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71FE83FEB0D7FC3434DADE52 /* Pods-IceTime.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -297,6 +385,7 @@
 		};
 		946D036B224DD85E002FC037 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3E707FCFAC64FAD806A0798 /* Pods-IceTime.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
