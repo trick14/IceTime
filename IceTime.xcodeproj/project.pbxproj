@@ -14,6 +14,10 @@
 		946D0365224DD85E002FC037 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 946D0363224DD85E002FC037 /* LaunchScreen.storyboard */; };
 		946D036E224DD943002FC037 /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D036D224DD943002FC037 /* URLManager.swift */; };
 		946D0370224EE618002FC037 /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D036F224EE618002FC037 /* Debug.swift */; };
+		946D0373224F34A5002FC037 /* ITRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D0372224F34A5002FC037 /* ITRequestManager.swift */; };
+		946D0375224F34DB002FC037 /* ITRequestCompponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D0374224F34DB002FC037 /* ITRequestCompponent.swift */; };
+		946D037A224F3EDE002FC037 /* IceSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D0379224F3EDE002FC037 /* IceSession.swift */; };
+		946D037C224F42B6002FC037 /* IceSessionCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D037B224F42B6002FC037 /* IceSessionCollectionCell.swift */; };
 		E35BC12CE7BE0CF1C96BECB2 /* Pods_IceTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 442D5DBAC1175F2E7CE759B7 /* Pods_IceTime.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +33,10 @@
 		946D0366224DD85E002FC037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		946D036D224DD943002FC037 /* URLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLManager.swift; sourceTree = "<group>"; };
 		946D036F224EE618002FC037 /* Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
+		946D0372224F34A5002FC037 /* ITRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITRequestManager.swift; sourceTree = "<group>"; };
+		946D0374224F34DB002FC037 /* ITRequestCompponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITRequestCompponent.swift; sourceTree = "<group>"; };
+		946D0379224F3EDE002FC037 /* IceSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceSession.swift; sourceTree = "<group>"; };
+		946D037B224F42B6002FC037 /* IceSessionCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceSessionCollectionCell.swift; sourceTree = "<group>"; };
 		D3E707FCFAC64FAD806A0798 /* Pods-IceTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IceTime.release.xcconfig"; path = "Target Support Files/Pods-IceTime/Pods-IceTime.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +73,8 @@
 		946D0359224DD85D002FC037 /* IceTime */ = {
 			isa = PBXGroup;
 			children = (
+				946D0378224F3EC7002FC037 /* Model */,
+				946D0371224F3476002FC037 /* WebRequest */,
 				946D036C224DD928002FC037 /* ViewController */,
 				946D035A224DD85D002FC037 /* AppDelegate.swift */,
 				946D035C224DD85D002FC037 /* ViewController.swift */,
@@ -74,6 +84,7 @@
 				946D0366224DD85E002FC037 /* Info.plist */,
 				946D036D224DD943002FC037 /* URLManager.swift */,
 				946D036F224EE618002FC037 /* Debug.swift */,
+				946D037B224F42B6002FC037 /* IceSessionCollectionCell.swift */,
 			);
 			path = IceTime;
 			sourceTree = "<group>";
@@ -83,6 +94,23 @@
 			children = (
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		946D0371224F3476002FC037 /* WebRequest */ = {
+			isa = PBXGroup;
+			children = (
+				946D0372224F34A5002FC037 /* ITRequestManager.swift */,
+				946D0374224F34DB002FC037 /* ITRequestCompponent.swift */,
+			);
+			path = WebRequest;
+			sourceTree = "<group>";
+		};
+		946D0378224F3EC7002FC037 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				946D0379224F3EDE002FC037 /* IceSession.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E0E3D8DB6CDAA2CA2A81B2A6 /* Pods */ = {
@@ -230,8 +258,12 @@
 			files = (
 				946D035D224DD85D002FC037 /* ViewController.swift in Sources */,
 				946D0370224EE618002FC037 /* Debug.swift in Sources */,
+				946D037C224F42B6002FC037 /* IceSessionCollectionCell.swift in Sources */,
 				946D035B224DD85D002FC037 /* AppDelegate.swift in Sources */,
+				946D0373224F34A5002FC037 /* ITRequestManager.swift in Sources */,
+				946D037A224F3EDE002FC037 /* IceSession.swift in Sources */,
 				946D036E224DD943002FC037 /* URLManager.swift in Sources */,
+				946D0375224F34DB002FC037 /* ITRequestCompponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
