@@ -1,5 +1,5 @@
 //
-//  ITRequestCompponent.swift
+//  ITRequestComponent.swift
 //  IceTime
 //
 //  Created by Ryan Han on 3/29/19.

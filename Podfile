@@ -10,5 +10,6 @@ target 'IceTime' do
   pod 'Kingfisher'
   pod 'Alamofire'
   pod 'SwiftSoup'
+  pod 'Pulley'
 
 end

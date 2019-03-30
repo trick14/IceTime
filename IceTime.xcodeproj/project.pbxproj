@@ -15,9 +15,11 @@
 		946D036E224DD943002FC037 /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D036D224DD943002FC037 /* URLManager.swift */; };
 		946D0370224EE618002FC037 /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D036F224EE618002FC037 /* Debug.swift */; };
 		946D0373224F34A5002FC037 /* ITRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D0372224F34A5002FC037 /* ITRequestManager.swift */; };
-		946D0375224F34DB002FC037 /* ITRequestCompponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D0374224F34DB002FC037 /* ITRequestCompponent.swift */; };
+		946D0375224F34DB002FC037 /* ITRequestComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D0374224F34DB002FC037 /* ITRequestComponent.swift */; };
 		946D037A224F3EDE002FC037 /* IceSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D0379224F3EDE002FC037 /* IceSession.swift */; };
 		946D037C224F42B6002FC037 /* IceSessionCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D037B224F42B6002FC037 /* IceSessionCollectionCell.swift */; };
+		946D037E224FC59E002FC037 /* ITRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D037D224FC59E002FC037 /* ITRegex.swift */; };
+		946D0380224FC65F002FC037 /* IceSession+GreatPark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D037F224FC65F002FC037 /* IceSession+GreatPark.swift */; };
 		E35BC12CE7BE0CF1C96BECB2 /* Pods_IceTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 442D5DBAC1175F2E7CE759B7 /* Pods_IceTime.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,9 +36,11 @@
 		946D036D224DD943002FC037 /* URLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLManager.swift; sourceTree = "<group>"; };
 		946D036F224EE618002FC037 /* Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
 		946D0372224F34A5002FC037 /* ITRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITRequestManager.swift; sourceTree = "<group>"; };
-		946D0374224F34DB002FC037 /* ITRequestCompponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITRequestCompponent.swift; sourceTree = "<group>"; };
+		946D0374224F34DB002FC037 /* ITRequestComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITRequestComponent.swift; sourceTree = "<group>"; };
 		946D0379224F3EDE002FC037 /* IceSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceSession.swift; sourceTree = "<group>"; };
 		946D037B224F42B6002FC037 /* IceSessionCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceSessionCollectionCell.swift; sourceTree = "<group>"; };
+		946D037D224FC59E002FC037 /* ITRegex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITRegex.swift; sourceTree = "<group>"; };
+		946D037F224FC65F002FC037 /* IceSession+GreatPark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IceSession+GreatPark.swift"; sourceTree = "<group>"; };
 		D3E707FCFAC64FAD806A0798 /* Pods-IceTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IceTime.release.xcconfig"; path = "Target Support Files/Pods-IceTime/Pods-IceTime.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,7 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				946D0372224F34A5002FC037 /* ITRequestManager.swift */,
-				946D0374224F34DB002FC037 /* ITRequestCompponent.swift */,
+				946D0374224F34DB002FC037 /* ITRequestComponent.swift */,
+				946D037D224FC59E002FC037 /* ITRegex.swift */,
 			);
 			path = WebRequest;
 			sourceTree = "<group>";
@@ -109,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				946D0379224F3EDE002FC037 /* IceSession.swift */,
+				946D037F224FC65F002FC037 /* IceSession+GreatPark.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -210,6 +216,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-IceTime/Pods-IceTime-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Pulley/Pulley.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
 			);
@@ -219,6 +226,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pulley.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
 			);
@@ -256,14 +264,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				946D0380224FC65F002FC037 /* IceSession+GreatPark.swift in Sources */,
 				946D035D224DD85D002FC037 /* ViewController.swift in Sources */,
 				946D0370224EE618002FC037 /* Debug.swift in Sources */,
+				946D037E224FC59E002FC037 /* ITRegex.swift in Sources */,
 				946D037C224F42B6002FC037 /* IceSessionCollectionCell.swift in Sources */,
 				946D035B224DD85D002FC037 /* AppDelegate.swift in Sources */,
 				946D0373224F34A5002FC037 /* ITRequestManager.swift in Sources */,
 				946D037A224F3EDE002FC037 /* IceSession.swift in Sources */,
 				946D036E224DD943002FC037 /* URLManager.swift in Sources */,
-				946D0375224F34DB002FC037 /* ITRequestCompponent.swift in Sources */,
+				946D0375224F34DB002FC037 /* ITRequestComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

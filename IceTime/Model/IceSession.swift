@@ -9,7 +9,6 @@
 import Foundation
 
 struct IceSession {
-    let timezone: TimeZone
     let begin: Date
     let end: Date
     let information: String
