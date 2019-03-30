@@ -13,6 +13,7 @@
 		946D0362224DD85E002FC037 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 946D0361224DD85E002FC037 /* Assets.xcassets */; };
 		946D0365224DD85E002FC037 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 946D0363224DD85E002FC037 /* LaunchScreen.storyboard */; };
 		946D036E224DD943002FC037 /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D036D224DD943002FC037 /* URLManager.swift */; };
+		946D0370224EE618002FC037 /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D036F224EE618002FC037 /* Debug.swift */; };
 		E35BC12CE7BE0CF1C96BECB2 /* Pods_IceTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 442D5DBAC1175F2E7CE759B7 /* Pods_IceTime.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		946D0364224DD85E002FC037 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		946D0366224DD85E002FC037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		946D036D224DD943002FC037 /* URLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLManager.swift; sourceTree = "<group>"; };
+		946D036F224EE618002FC037 /* Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
 		D3E707FCFAC64FAD806A0798 /* Pods-IceTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IceTime.release.xcconfig"; path = "Target Support Files/Pods-IceTime/Pods-IceTime.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +73,7 @@
 				946D0363224DD85E002FC037 /* LaunchScreen.storyboard */,
 				946D0366224DD85E002FC037 /* Info.plist */,
 				946D036D224DD943002FC037 /* URLManager.swift */,
+				946D036F224EE618002FC037 /* Debug.swift */,
 			);
 			path = IceTime;
 			sourceTree = "<group>";
@@ -177,15 +180,19 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-IceTime/Pods-IceTime-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -222,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				946D035D224DD85D002FC037 /* ViewController.swift in Sources */,
+				946D0370224EE618002FC037 /* Debug.swift in Sources */,
 				946D035B224DD85D002FC037 /* AppDelegate.swift in Sources */,
 				946D036E224DD943002FC037 /* URLManager.swift in Sources */,
 			);

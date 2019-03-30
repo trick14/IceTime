@@ -8,5 +8,7 @@ target 'IceTime' do
   # Pods for IceTime
   pod 'SnapKit'
   pod 'Kingfisher'
+  pod 'Alamofire'
+  pod 'SwiftSoup'
 
 end
