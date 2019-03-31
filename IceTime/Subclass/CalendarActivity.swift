@@ -8,6 +8,7 @@
 
 import UIKit
 import EventKit
+import QuickLook
 
 extension UIActivity.ActivityType {
     static let calendar = UIActivity.ActivityType(rawValue: "com.wag.IceTime.calendar")

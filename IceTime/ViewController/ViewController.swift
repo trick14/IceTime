@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     fileprivate let titleView: ScheduleTitleView = ScheduleTitleView.viewFromNib()
     fileprivate var sessions: [IceSession] = []
-    fileprivate var event: Event = .publicSkate
+    fileprivate var event: Event = .all
     fileprivate var date: Date = Date()
     fileprivate var formatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -129,6 +129,28 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let session = sessions[indexPath.item]
         let activityViewController = UIActivityViewController(activityItems: [session], applicationActivities: [CalendarActivity()])
+        activityViewController.completionWithItemsHandler = { [weak self] (activityType, completed, returnedItems, error) in
+            guard let self = self else { return }
+            let message: String
+            if let error = error {
+                message = error.localizedDescription
+                
+            } else if !completed { // cancelled
+                return
+                
+            } else {
+                message = session.name + " is added to your calendar!"
+                
+            }
+            
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+                let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                alert.addAction(ok)
+                self.present(alert, animated: true, completion: nil)
+            }
+            
+        }
         present(activityViewController, animated: true)
     }
 }
