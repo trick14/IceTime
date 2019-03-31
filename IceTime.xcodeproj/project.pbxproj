@@ -20,6 +20,11 @@
 		946D037C224F42B6002FC037 /* IceSessionCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D037B224F42B6002FC037 /* IceSessionCollectionCell.swift */; };
 		946D037E224FC59E002FC037 /* ITRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D037D224FC59E002FC037 /* ITRegex.swift */; };
 		946D0380224FC65F002FC037 /* IceSession+GreatPark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D037F224FC65F002FC037 /* IceSession+GreatPark.swift */; };
+		946D038322500822002FC037 /* InputViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D038222500822002FC037 /* InputViewButton.swift */; };
+		946D0385225016AF002FC037 /* EventPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D0384225016AF002FC037 /* EventPickerView.swift */; };
+		946D0387225053F7002FC037 /* ScheduleTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 946D0386225053F7002FC037 /* ScheduleTitleView.xib */; };
+		946D038922505474002FC037 /* ScheduleTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D038822505474002FC037 /* ScheduleTitleView.swift */; };
+		946D038C2250552F002FC037 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D038B2250552F002FC037 /* UIView+.swift */; };
 		E35BC12CE7BE0CF1C96BECB2 /* Pods_IceTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 442D5DBAC1175F2E7CE759B7 /* Pods_IceTime.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +46,11 @@
 		946D037B224F42B6002FC037 /* IceSessionCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceSessionCollectionCell.swift; sourceTree = "<group>"; };
 		946D037D224FC59E002FC037 /* ITRegex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITRegex.swift; sourceTree = "<group>"; };
 		946D037F224FC65F002FC037 /* IceSession+GreatPark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IceSession+GreatPark.swift"; sourceTree = "<group>"; };
+		946D038222500822002FC037 /* InputViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewButton.swift; sourceTree = "<group>"; };
+		946D0384225016AF002FC037 /* EventPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPickerView.swift; sourceTree = "<group>"; };
+		946D0386225053F7002FC037 /* ScheduleTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleTitleView.xib; sourceTree = "<group>"; };
+		946D038822505474002FC037 /* ScheduleTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTitleView.swift; sourceTree = "<group>"; };
+		946D038B2250552F002FC037 /* UIView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		D3E707FCFAC64FAD806A0798 /* Pods-IceTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IceTime.release.xcconfig"; path = "Target Support Files/Pods-IceTime/Pods-IceTime.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,11 +87,12 @@
 		946D0359224DD85D002FC037 /* IceTime */ = {
 			isa = PBXGroup;
 			children = (
+				946D038A225054F8002FC037 /* Extension */,
+				946D038122500818002FC037 /* View */,
 				946D0378224F3EC7002FC037 /* Model */,
 				946D0371224F3476002FC037 /* WebRequest */,
 				946D036C224DD928002FC037 /* ViewController */,
 				946D035A224DD85D002FC037 /* AppDelegate.swift */,
-				946D035C224DD85D002FC037 /* ViewController.swift */,
 				946D035E224DD85D002FC037 /* Main.storyboard */,
 				946D0361224DD85E002FC037 /* Assets.xcassets */,
 				946D0363224DD85E002FC037 /* LaunchScreen.storyboard */,
@@ -96,6 +107,9 @@
 		946D036C224DD928002FC037 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				946D038822505474002FC037 /* ScheduleTitleView.swift */,
+				946D0386225053F7002FC037 /* ScheduleTitleView.xib */,
+				946D035C224DD85D002FC037 /* ViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -103,9 +117,9 @@
 		946D0371224F3476002FC037 /* WebRequest */ = {
 			isa = PBXGroup;
 			children = (
-				946D0372224F34A5002FC037 /* ITRequestManager.swift */,
-				946D0374224F34DB002FC037 /* ITRequestComponent.swift */,
 				946D037D224FC59E002FC037 /* ITRegex.swift */,
+				946D0374224F34DB002FC037 /* ITRequestComponent.swift */,
+				946D0372224F34A5002FC037 /* ITRequestManager.swift */,
 			);
 			path = WebRequest;
 			sourceTree = "<group>";
@@ -117,6 +131,23 @@
 				946D037F224FC65F002FC037 /* IceSession+GreatPark.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		946D038122500818002FC037 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				946D0384225016AF002FC037 /* EventPickerView.swift */,
+				946D038222500822002FC037 /* InputViewButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		946D038A225054F8002FC037 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				946D038B2250552F002FC037 /* UIView+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		E0E3D8DB6CDAA2CA2A81B2A6 /* Pods */ = {
@@ -196,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				946D0387225053F7002FC037 /* ScheduleTitleView.xib in Resources */,
 				946D0365224DD85E002FC037 /* LaunchScreen.storyboard in Resources */,
 				946D0362224DD85E002FC037 /* Assets.xcassets in Resources */,
 				946D0360224DD85D002FC037 /* Main.storyboard in Resources */,
@@ -267,12 +299,16 @@
 				946D0380224FC65F002FC037 /* IceSession+GreatPark.swift in Sources */,
 				946D035D224DD85D002FC037 /* ViewController.swift in Sources */,
 				946D0370224EE618002FC037 /* Debug.swift in Sources */,
+				946D038922505474002FC037 /* ScheduleTitleView.swift in Sources */,
 				946D037E224FC59E002FC037 /* ITRegex.swift in Sources */,
 				946D037C224F42B6002FC037 /* IceSessionCollectionCell.swift in Sources */,
 				946D035B224DD85D002FC037 /* AppDelegate.swift in Sources */,
+				946D0385225016AF002FC037 /* EventPickerView.swift in Sources */,
+				946D038C2250552F002FC037 /* UIView+.swift in Sources */,
 				946D0373224F34A5002FC037 /* ITRequestManager.swift in Sources */,
 				946D037A224F3EDE002FC037 /* IceSession.swift in Sources */,
 				946D036E224DD943002FC037 /* URLManager.swift in Sources */,
+				946D038322500822002FC037 /* InputViewButton.swift in Sources */,
 				946D0375224F34DB002FC037 /* ITRequestComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

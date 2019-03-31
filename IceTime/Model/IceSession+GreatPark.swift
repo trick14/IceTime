@@ -69,15 +69,41 @@ struct GreatPark {
         return formatter
     }()
     
-    enum Event: String {
-        case all = "0"
-        case camp = "k"
-        case academy = "c"
-        case freestyle = "9"
-        case game = "g"
-        case pickupHockey = "13"
-        case publicSkate = "7"
-        case stickTime = "12"
+    enum Event: CaseIterable {
+        case all
+        case camp
+        case academy
+        case freestyle
+        case game
+        case pickupHockey
+        case publicSkate
+        case stickTime
+        
+        var parameter: String {
+            switch self {
+            case .all: return "0"
+            case .camp: return "k"
+            case .academy: return "c"
+            case .freestyle: return "9"
+            case .game: return "g"
+            case .pickupHockey: return "13"
+            case .publicSkate: return "7"
+            case .stickTime: return "12"
+            }
+        }
+        
+        var string: String {
+            switch self {
+            case .all: return "All"
+            case .camp: return "Camp"
+            case .academy: return "Academy"
+            case .freestyle: return "Freestyle"
+            case .game: return "Game"
+            case .pickupHockey: return "Pickup Hockey"
+            case .publicSkate: return "Public Skate"
+            case .stickTime: return "Stick Time"
+            }
+        }
     }
     
     static func create(start: Date, end: Date, event: Event) -> ITRequestComponent {
@@ -87,7 +113,7 @@ struct GreatPark {
         let param: [String: Any] = ["startDate": formatter.string(from: start),
                                     "endDate": formatter.string(from: end),
                                     "facilityID": facilityId,
-                                    "eventType": event.rawValue]
+                                    "eventType": event.parameter]
         
         let request = ITRequestComponent(url: url, parameter: param)
         return request

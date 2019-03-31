@@ -35,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ikb-yh-ITS">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GO2-n5-J4I">
                                     <size key="itemSize" width="50" height="50"/>
@@ -51,8 +51,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Fhq-aM-Tft">
-                                                    <rect key="frame" x="20" y="18.5" width="258" height="43.5"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Fhq-aM-Tft">
+                                                    <rect key="frame" x="20" y="18.5" width="374" height="43.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information about the session" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I5H-ZF-Pye">
                                                             <rect key="frame" x="0.0" y="0.0" width="258" height="21.5"/>
@@ -68,18 +68,12 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZh-04-Bu7">
-                                                    <rect key="frame" x="348" y="25" width="46" height="30"/>
-                                                    <state key="normal" title="Button"/>
-                                                </button>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="Fhq-aM-Tft" firstAttribute="leading" secondItem="csn-7H-2FN" secondAttribute="leading" constant="20" id="4mh-Sk-c1r"/>
-                                            <constraint firstAttribute="trailing" secondItem="RZh-04-Bu7" secondAttribute="trailing" constant="20" id="CkW-oA-nE6"/>
                                             <constraint firstItem="Fhq-aM-Tft" firstAttribute="centerY" secondItem="csn-7H-2FN" secondAttribute="centerY" id="K1M-la-oO6"/>
-                                            <constraint firstItem="RZh-04-Bu7" firstAttribute="centerY" secondItem="csn-7H-2FN" secondAttribute="centerY" id="W0e-x9-Ahe"/>
-                                            <constraint firstItem="RZh-04-Bu7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Fhq-aM-Tft" secondAttribute="trailing" constant="5" id="fSH-AU-zlp"/>
+                                            <constraint firstAttribute="trailing" secondItem="Fhq-aM-Tft" secondAttribute="trailing" constant="20" id="iAN-9M-JIQ"/>
                                         </constraints>
                                         <size key="customSize" width="414" height="80"/>
                                         <connections>
@@ -103,11 +97,31 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="6Ya-oL-ncG">
                         <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="eMB-7D-32D">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ru0-0O-8OK">
+                                <rect key="frame" x="20" y="7" width="42" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Today"/>
+                                <connections>
+                                    <action selector="didSelectToday" destination="BYZ-38-t0r" eventType="touchUpInside" id="Scf-w9-Cdp"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="KW5-NN-UrZ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="60k-eB-inf" customClass="InputViewButton" customModule="IceTime" customModuleProvider="target">
+                                <rect key="frame" x="350" y="7" width="44" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Event"/>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="ikb-yh-ITS" id="wUs-Qr-rzj"/>
+                        <outlet property="eventButton" destination="60k-eB-inf" id="d5X-ot-UQD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -13,13 +13,35 @@ import SnapKit
 
 class ViewController: UIViewController {
     @IBOutlet fileprivate var collectionView: UICollectionView!
+    @IBOutlet fileprivate var eventButton: InputViewButton!
+    
+    fileprivate let titleView: ScheduleTitleView = ScheduleTitleView.viewFromNib()
     fileprivate var sessions: [IceSession] = []
+    fileprivate var event = GreatPark.Event.all
+    fileprivate var date: Date = Date()
+    fileprivate var formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.setLocalizedDateFormatFromTemplate("M/d EEE")
+        return formatter
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let today = Date()
-        IceSession.requestGreatParkSessions(begin: today, end: today, event: .publicSkate) { [weak self] (error, sessions) in
+        let eventPickerView = EventPickerView()
+        eventPickerView.delegate = self
+        eventButton.setInputView(eventPickerView)
+        
+        titleView.leftButton.addTarget(self, action: #selector(didSelectPreviousDay), for: .touchUpInside)
+        titleView.rightButton.addTarget(self, action: #selector(didSelectNextDay), for: .touchUpInside)
+        updateTitleView()
+        navigationItem.titleView = titleView
+        
+        requestSession()
+    }
+    
+    fileprivate func requestSession() {
+        IceSession.requestGreatParkSessions(begin: date, end: date, event: event) { [weak self] (error, sessions) in
             guard let self = self else { return }
             self.sessions = sessions ?? []
             self.collectionView.reloadData()
@@ -27,6 +49,45 @@ class ViewController: UIViewController {
             guard let error = error else { return }
             dLog(error.localizedDescription)
         }
+    }
+    
+    fileprivate func updateTitleView() {
+        let isDateToday = Calendar.current.isDate(date, inSameDayAs: Date())
+        titleView.leftButton.isEnabled = !isDateToday
+        titleView.titleLabel.text = formatter.string(from: date)
+    }
+    
+    @objc fileprivate func didSelectPreviousDay() {
+        guard let date = Calendar.current.date(byAdding: .day, value: -1, to: date) else { return }
+        self.date = date
+        updateTitleView()
+        requestSession()
+    }
+    
+    @objc fileprivate func didSelectNextDay() {
+        guard let date = Calendar.current.date(byAdding: .day, value: 1, to: date) else { return }
+        self.date = date
+        updateTitleView()
+        requestSession()
+    }
+    
+    @IBAction fileprivate func didSelectToday() {
+        guard !Calendar.current.isDate(date, inSameDayAs: Date()) else { return }
+        date = Date()
+        updateTitleView()
+        requestSession()
+    }
+}
+
+extension ViewController: EventPickerViewDelegate {
+    func didSelect(event: GreatPark.Event) {
+        eventButton.resignFirstResponder()
+        self.event = event
+        requestSession()
+    }
+    
+    func didCancel() {
+        eventButton.resignFirstResponder()
     }
 }
 
@@ -48,7 +109,6 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        dLog(sessions.count)
         return sessions.count
     }
     
@@ -64,8 +124,8 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let session = sessions[indexPath.item]
-        dLog(indexPath.item)
+//        let session = sessions[indexPath.item]
+        
     }
 }
 
