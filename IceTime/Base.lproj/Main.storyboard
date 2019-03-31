@@ -43,46 +43,7 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="IceSessionCollectionCell" id="csn-7H-2FN" customClass="IceSessionCollectionCell" customModule="IceTime" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Fhq-aM-Tft">
-                                                    <rect key="frame" x="20" y="18.5" width="374" height="43.5"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information about the session" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I5H-ZF-Pye">
-                                                            <rect key="frame" x="0.0" y="0.0" width="258" height="21.5"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00-00-00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpR-wF-GrW">
-                                                            <rect key="frame" x="0.0" y="26.5" width="89" height="17"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                            </subviews>
-                                        </view>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="Fhq-aM-Tft" firstAttribute="leading" secondItem="csn-7H-2FN" secondAttribute="leading" constant="20" id="4mh-Sk-c1r"/>
-                                            <constraint firstItem="Fhq-aM-Tft" firstAttribute="centerY" secondItem="csn-7H-2FN" secondAttribute="centerY" id="K1M-la-oO6"/>
-                                            <constraint firstAttribute="trailing" secondItem="Fhq-aM-Tft" secondAttribute="trailing" constant="20" id="iAN-9M-JIQ"/>
-                                        </constraints>
-                                        <size key="customSize" width="414" height="80"/>
-                                        <connections>
-                                            <outlet property="informationLabel" destination="I5H-ZF-Pye" id="zL5-zl-hBF"/>
-                                            <outlet property="timeLabel" destination="bpR-wF-GrW" id="8Z1-ZC-2S9"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="Qqu-9e-LCi"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="j8T-Wb-jGX"/>

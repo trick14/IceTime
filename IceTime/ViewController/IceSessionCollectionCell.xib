@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="IceSessionCollectionCell" id="bDD-Cq-T4H" customClass="IceSessionCollectionCell" customModule="IceTime" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="79.5"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="79.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Basic 1 Youth (Sat 11:35am)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h47-dy-fyF">
+                        <rect key="frame" x="15" y="10" width="379" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" text="Great Park Ice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cw6-Oa-s3a">
+                        <rect key="frame" x="15" y="34.5" width="82" height="15"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCN-ww-DqH">
+                        <rect key="frame" x="15" y="54.5" width="34" height="15"/>
+                        <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yta-4I-OFm">
+                        <rect key="frame" x="54" y="54.5" width="6" height="15"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSg-EV-ggw">
+                        <rect key="frame" x="65" y="54.5" width="34" height="15"/>
+                        <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3/27/2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nqh-GE-3Be">
+                        <rect key="frame" x="109" y="54.5" width="58.5" height="15"/>
+                        <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Rink 2 , F)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000001192092896" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3BI-5g-Ptj">
+                        <rect key="frame" x="112" y="34.5" width="63" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="XSg-EV-ggw" firstAttribute="centerY" secondItem="Yta-4I-OFm" secondAttribute="centerY" id="BKa-VA-Yo8"/>
+                <constraint firstItem="Nqh-GE-3Be" firstAttribute="centerY" secondItem="iCN-ww-DqH" secondAttribute="centerY" id="DVX-H4-Iz2"/>
+                <constraint firstItem="h47-dy-fyF" firstAttribute="top" secondItem="bDD-Cq-T4H" secondAttribute="top" constant="10" id="E5e-NP-QSd"/>
+                <constraint firstItem="XSg-EV-ggw" firstAttribute="leading" secondItem="Yta-4I-OFm" secondAttribute="trailing" constant="5" id="EpN-yF-s0w"/>
+                <constraint firstAttribute="bottom" secondItem="iCN-ww-DqH" secondAttribute="bottom" constant="10" id="KeK-Mz-atC"/>
+                <constraint firstItem="Cw6-Oa-s3a" firstAttribute="top" secondItem="h47-dy-fyF" secondAttribute="bottom" constant="5" id="TkS-mi-v3C"/>
+                <constraint firstItem="Yta-4I-OFm" firstAttribute="centerY" secondItem="iCN-ww-DqH" secondAttribute="centerY" id="c27-WT-1gQ"/>
+                <constraint firstItem="3BI-5g-Ptj" firstAttribute="top" secondItem="h47-dy-fyF" secondAttribute="bottom" constant="5" id="cUv-Ih-qhJ"/>
+                <constraint firstAttribute="trailing" secondItem="h47-dy-fyF" secondAttribute="trailing" constant="20" id="h5C-4F-M4G"/>
+                <constraint firstItem="3BI-5g-Ptj" firstAttribute="leading" secondItem="Cw6-Oa-s3a" secondAttribute="trailing" constant="15" id="hkS-nR-Yaw"/>
+                <constraint firstItem="h47-dy-fyF" firstAttribute="leading" secondItem="bDD-Cq-T4H" secondAttribute="leading" constant="15" id="htD-9c-NIn"/>
+                <constraint firstItem="Yta-4I-OFm" firstAttribute="leading" secondItem="iCN-ww-DqH" secondAttribute="trailing" constant="5" id="kQ6-PD-DFy"/>
+                <constraint firstItem="Nqh-GE-3Be" firstAttribute="leading" secondItem="XSg-EV-ggw" secondAttribute="trailing" constant="10" id="p2v-NT-ChM"/>
+                <constraint firstItem="Cw6-Oa-s3a" firstAttribute="leading" secondItem="bDD-Cq-T4H" secondAttribute="leading" constant="15" id="qAq-yU-QCS"/>
+                <constraint firstItem="iCN-ww-DqH" firstAttribute="leading" secondItem="bDD-Cq-T4H" secondAttribute="leading" constant="15" id="w3U-TJ-UMB"/>
+                <constraint firstItem="iCN-ww-DqH" firstAttribute="top" secondItem="Cw6-Oa-s3a" secondAttribute="bottom" constant="5" id="w6C-4n-9Tj"/>
+            </constraints>
+            <size key="customSize" width="414" height="90"/>
+            <connections>
+                <outlet property="beginLabel" destination="iCN-ww-DqH" id="TNU-EX-Th8"/>
+                <outlet property="dateLabel" destination="Nqh-GE-3Be" id="iGZ-bX-Eqo"/>
+                <outlet property="endLabel" destination="XSg-EV-ggw" id="X85-mZ-L3N"/>
+                <outlet property="extraLabel" destination="3BI-5g-Ptj" id="pih-BQ-z7g"/>
+                <outlet property="nameLabel" destination="h47-dy-fyF" id="2IM-z9-BCc"/>
+                <outlet property="rinkLabel" destination="Cw6-Oa-s3a" id="5go-ki-M8I"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="141.96428571428569"/>
+        </collectionViewCell>
+    </objects>
+</document>

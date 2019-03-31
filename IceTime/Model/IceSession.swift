@@ -11,5 +11,11 @@ import Foundation
 struct IceSession {
     let begin: Date
     let end: Date
-    let information: String
+    let rink: Rink
+    let name: String
+    let extra: String?
+}
+
+extension IceSession {
+    
 }

@@ -10,7 +10,7 @@ import Foundation
 import SwiftSoup
 
 extension IceSession {
-    static func requestGreatParkSessions(begin: Date, end: Date, event: GreatPark.Event, callback: @escaping(_ error: NSError?, _ sessions: [IceSession]?) -> Void) {
+    static func requestGreatParkSessions(begin: Date, end: Date, event: Event, callback: @escaping(_ error: NSError?, _ sessions: [IceSession]?) -> Void) {
         let component = GreatPark.create(start: begin, end: end, event: event)
         ITRequestManager.request(component: component).responseString { (response) in
             switch response.result {
@@ -28,22 +28,29 @@ extension IceSession {
                         let timeRegex = try NSRegularExpression(pattern: ITRegex.Pattern.time, options: [])
                         let timeMatches = timeRegex.matches(in: time, options: [], range: NSRange(location: 0, length: time.count))
                         guard timeMatches.count == 2 else { continue }
-                        let beginString = (time as NSString).substring(with: timeMatches[0].range).trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-                        let endString = (time as NSString).substring(with: timeMatches[0].range).trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-                        
+                        let beginString = time.substring(with: timeMatches[0].range).trimmingCharacters(in: .whitespacesAndNewlines)
+                        let endString = time.substring(with: timeMatches[1].range).trimmingCharacters(in: .whitespacesAndNewlines)
                         let type = try item.select("p").attr("class", "list-group-item-text").text()
                         let dateRegex = try NSRegularExpression(pattern: ITRegex.Pattern.date, options: [])
                         let dateMatch = dateRegex.firstMatch(in: type, options: [], range: NSRange(location: 0, length: type.count))
                         guard let match = dateMatch else { continue }
-                        let dateString = (type as NSString).substring(with: match.range).trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-                        
+                        let dateString = type.substring(with: match.range).trimmingCharacters(in: .whitespacesAndNewlines)
                         guard let begin = GreatPark.formatter.date(from: beginString + " " + dateString) else { continue }
-                        guard let end = GreatPark.formatter.date(from: endString + " " + dateString) else { continue }
+                        guard var end = GreatPark.formatter.date(from: endString + " " + dateString) else { continue }
+                        if end < begin { // 0:00pm
+                            end = end.addingTimeInterval(60 * 60 * 24)
+                        }
+                        guard let description = type.components(separatedBy: " on ").first else { continue }
+                        let information = description.components(separatedBy: "Great Park Ice -")
+                        let name = information[0].trimmingCharacters(in: .whitespacesAndNewlines)
+                        let place: String?
+                        if information.count == 2 {
+                            place = information[1].trimmingCharacters(in: .whitespacesAndNewlines)
+                        } else {
+                            place = nil
+                        }
                         
-                        guard let information = type.components(separatedBy: "on").first else { continue }
-                        let informationString = (information as NSString).trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-                        
-                        let session = IceSession(begin: begin, end: end, information: informationString)
+                        let session = IceSession(begin: begin, end: end, rink: .greatPark, name: name, extra: place)
                         array.append(session)
                     }
                     callback(nil, array)
@@ -69,40 +76,16 @@ struct GreatPark {
         return formatter
     }()
     
-    enum Event: CaseIterable {
-        case all
-        case camp
-        case academy
-        case freestyle
-        case game
-        case pickupHockey
-        case publicSkate
-        case stickTime
-        
-        var parameter: String {
-            switch self {
-            case .all: return "0"
-            case .camp: return "k"
-            case .academy: return "c"
-            case .freestyle: return "9"
-            case .game: return "g"
-            case .pickupHockey: return "13"
-            case .publicSkate: return "7"
-            case .stickTime: return "12"
-            }
-        }
-        
-        var string: String {
-            switch self {
-            case .all: return "All"
-            case .camp: return "Camp"
-            case .academy: return "Academy"
-            case .freestyle: return "Freestyle"
-            case .game: return "Game"
-            case .pickupHockey: return "Pickup Hockey"
-            case .publicSkate: return "Public Skate"
-            case .stickTime: return "Stick Time"
-            }
+    static func eventParameter(event: Event) -> String {
+        switch event {
+        case .all: return "0"
+        case .camp: return "k"
+        case .academy: return "c"
+        case .freestyle: return "9"
+        case .game: return "g"
+        case .pickupHockey: return "13"
+        case .publicSkate: return "7"
+        case .stickTime: return "12"
         }
     }
     
@@ -113,7 +96,7 @@ struct GreatPark {
         let param: [String: Any] = ["startDate": formatter.string(from: start),
                                     "endDate": formatter.string(from: end),
                                     "facilityID": facilityId,
-                                    "eventType": event.parameter]
+                                    "eventType": eventParameter(event: event)]
         
         let request = ITRequestComponent(url: url, parameter: param)
         return request

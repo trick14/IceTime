@@ -9,8 +9,12 @@
 import UIKit
 
 class IceSessionCollectionCell: UICollectionViewCell {
-    @IBOutlet fileprivate var timeLabel: UILabel!
-    @IBOutlet fileprivate var informationLabel: UILabel!
+    @IBOutlet fileprivate var nameLabel: UILabel!
+    @IBOutlet fileprivate var rinkLabel: UILabel!
+    @IBOutlet fileprivate var extraLabel: UILabel!
+    @IBOutlet fileprivate var beginLabel: UILabel!
+    @IBOutlet fileprivate var endLabel: UILabel!
+    @IBOutlet fileprivate var dateLabel: UILabel!
     
     fileprivate static let timeFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -28,7 +32,11 @@ class IceSessionCollectionCell: UICollectionViewCell {
         let endString = IceSessionCollectionCell.timeFormatter.string(from: session.end)
         let dateString = IceSessionCollectionCell.dateFormatter.string(from: session.begin)
         
-        timeLabel.text = beginString + " - " + endString + " " + dateString
-        informationLabel.text = session.information
+        nameLabel.text = session.name
+        rinkLabel.text = session.rink.string
+        extraLabel.text = session.extra
+        beginLabel.text = beginString
+        endLabel.text = endString
+        dateLabel.text = dateString
     }
 }

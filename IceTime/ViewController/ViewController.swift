@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     fileprivate let titleView: ScheduleTitleView = ScheduleTitleView.viewFromNib()
     fileprivate var sessions: [IceSession] = []
-    fileprivate var event = GreatPark.Event.all
+    fileprivate var event: Event = .publicSkate
     fileprivate var date: Date = Date()
     fileprivate var formatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -27,6 +27,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.register(UINib(nibName: "IceSessionCollectionCell", bundle: nil),
+                                forCellWithReuseIdentifier: "IceSessionCollectionCell")
         
         let eventPickerView = EventPickerView()
         eventPickerView.delegate = self
@@ -80,7 +83,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: EventPickerViewDelegate {
-    func didSelect(event: GreatPark.Event) {
+    func didSelect(event: Event) {
         eventButton.resignFirstResponder()
         self.event = event
         requestSession()
@@ -93,7 +96,7 @@ extension ViewController: EventPickerViewDelegate {
 
 extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 80)
+        return CGSize(width: collectionView.frameW, height: 79.5)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -124,8 +127,9 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let session = sessions[indexPath.item]
-        
+        let session = sessions[indexPath.item]
+        let activityViewController = UIActivityViewController(activityItems: [session], applicationActivities: [CalendarActivity()])
+        present(activityViewController, animated: true)
     }
 }
 
