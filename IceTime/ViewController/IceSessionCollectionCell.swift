@@ -18,7 +18,7 @@ class IceSessionCollectionCell: UICollectionViewCell {
     
     fileprivate static let timeFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.setLocalizedDateFormatFromTemplate("h:mma")
+        formatter.setLocalizedDateFormatFromTemplate("hh:mma")
         return formatter
     }()
     fileprivate static let dateFormatter: DateFormatter = {
@@ -31,7 +31,7 @@ class IceSessionCollectionCell: UICollectionViewCell {
         let beginString = IceSessionCollectionCell.timeFormatter.string(from: session.begin)
         let endString = IceSessionCollectionCell.timeFormatter.string(from: session.end)
         let dateString = IceSessionCollectionCell.dateFormatter.string(from: session.begin)
-        
+
         nameLabel.text = session.name
         rinkLabel.text = session.rink.string
         extraLabel.text = session.extra

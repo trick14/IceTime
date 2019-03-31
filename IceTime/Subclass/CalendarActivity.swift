@@ -30,7 +30,7 @@ class CalendarActivity: UIActivity {
     }
     
     override var activityImage: UIImage? {
-        return UIImage(named: "calendar")
+        return nil
     }
     
     override func canPerform(withActivityItems activityItems: [Any]) -> Bool {
@@ -59,17 +59,14 @@ class CalendarActivity: UIActivity {
             event.notes = session.extra
             event.calendar = eventStore.defaultCalendarForNewEvents
             
-            dLog(session.begin, session.end)
-            
             do {
                 try eventStore.save(event, span: .thisEvent)
                 
-            } catch let error as NSError {
-                print("failed to save event with error : \(error)")
+            } catch {
+                dLog(error.localizedDescription)
                 self.activityDidFinish(false)
                 
             }
-            print("Saved Event")
             self.activityDidFinish(true)
             
         }

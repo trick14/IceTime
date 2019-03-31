@@ -49,7 +49,7 @@ extension IceSession {
                         } else {
                             place = nil
                         }
-                        
+
                         let session = IceSession(begin: begin, end: end, rink: .greatPark, name: name, extra: place)
                         array.append(session)
                     }
